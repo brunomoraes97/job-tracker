@@ -1,0 +1,5 @@
+.inline { display: grid; grid-template-columns: 130px minmax(0, 1fr) 34px; align-items: center; gap: var(--jt-space-3); font-size: var(--jt-text-small-size); }
+.label { color: var(--jt-color-text-secondary); }
+.value { font-family: var(--jt-font-mono); font-size: var(--jt-text-caption-size); text-align: right; }
+.stacked { display: flex; flex-direction: column; gap: var(--jt-space-1-5); font-size: var(--jt-text-small-size); }
+.head { display: flex; justify-content: space-between; color: var(--jt-color-text-secondary); }

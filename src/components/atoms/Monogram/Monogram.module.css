@@ -1,0 +1,8 @@
+.mono { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: var(--jt-font-weight-semibold); }
+.sm { width: 36px; height: 36px; border-radius: var(--jt-radius-md); font-size: var(--jt-text-caption-size); }
+.md { width: 44px; height: 44px; border-radius: var(--jt-radius-lg); font-size: 15px; }
+.lg { width: 52px; height: 52px; border-radius: var(--jt-radius-xl); font-size: 18px; }
+.teal { background: var(--jt-tint-teal-bg); color: var(--jt-tint-teal-fg); }
+.amber { background: var(--jt-tint-amber-bg); color: var(--jt-tint-amber-fg); }
+.violet { background: var(--jt-tint-violet-bg); color: var(--jt-tint-violet-fg); }
+.stone { background: var(--jt-tint-stone-bg); color: var(--jt-tint-stone-fg); }

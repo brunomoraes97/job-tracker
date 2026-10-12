@@ -1,0 +1,10 @@
+.card { display: flex; gap: var(--jt-space-4); align-items: flex-start; padding: var(--jt-space-4) var(--jt-space-4-5); background: var(--jt-color-surface); border: 1px solid var(--jt-color-border); border-radius: var(--jt-radius-xl); cursor: pointer; transition: border-color var(--jt-motion-fast); }
+.card:hover { border-color: var(--jt-color-border-strong); }
+.selected, .selected:hover { border: 2px solid var(--jt-color-primary); padding: calc(var(--jt-space-4) - 1px) calc(var(--jt-space-4-5) - 1px); }
+.main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--jt-space-1-5); }
+.titleRow { display: flex; gap: var(--jt-space-2); align-items: center; }
+.title { padding: 0; border: 0; background: none; text-align: left; cursor: pointer; font-size: var(--jt-text-body-lg-size); font-weight: 600; color: var(--jt-color-text); }
+.title:hover { color: var(--jt-color-primary); }
+.meta { font-size: var(--jt-text-small-size); color: var(--jt-color-text-muted); }
+.tags { display: flex; gap: var(--jt-space-1-5); flex-wrap: wrap; }
+.foot { font-family: var(--jt-font-mono); font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }

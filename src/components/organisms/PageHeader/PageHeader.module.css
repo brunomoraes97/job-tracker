@@ -1,0 +1,6 @@
+.wrap { display: flex; flex-direction: column; gap: var(--jt-space-4); }
+.header { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--jt-space-6); flex-wrap: wrap; }
+.text { display: flex; flex-direction: column; gap: var(--jt-space-1-5); }
+.title { margin: 0; font-family: var(--jt-text-display-family); font-size: var(--jt-text-display-size); line-height: var(--jt-text-display-line-height); font-weight: var(--jt-text-display-weight); letter-spacing: var(--jt-text-display-tracking); }
+.subtitle { margin: 0; font-size: var(--jt-text-body-size); color: var(--jt-color-text-muted); }
+.actions { display: flex; gap: var(--jt-space-3); align-items: center; flex-wrap: wrap; }

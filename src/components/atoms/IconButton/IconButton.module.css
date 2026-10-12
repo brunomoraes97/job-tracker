@@ -1,0 +1,10 @@
+.button { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--jt-radius-lg); border: 1px solid transparent; cursor: pointer; flex-shrink: 0; }
+.button:disabled { opacity: 0.5; cursor: not-allowed; }
+.md { width: var(--jt-size-control-md); height: var(--jt-size-control-md); }
+.sm { width: 28px; height: 28px; border-radius: var(--jt-radius-sm); }
+.outline { background: var(--jt-color-surface); border-color: var(--jt-color-border-strong); color: var(--jt-color-text-muted); }
+.outline:hover:not(:disabled) { background: var(--jt-color-surface-sunken); color: var(--jt-color-text); }
+.ghost { background: transparent; color: var(--jt-color-text-muted); }
+.ghost:hover:not(:disabled) { background: var(--jt-color-track); }
+.primary { background: var(--jt-color-primary); color: var(--jt-color-on-primary); }
+.primary:hover:not(:disabled) { background: var(--jt-color-primary-hover); }

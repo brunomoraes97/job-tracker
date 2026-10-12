@@ -1,0 +1,6 @@
+.track { width: 100%; background: var(--jt-color-track); border-radius: var(--jt-radius-pill); overflow: hidden; }
+.xs { height: 4px; } .sm { height: 6px; } .md { height: 8px; } .lg { height: 18px; border-radius: 4px; }
+.fill { height: 100%; border-radius: inherit; transition: width var(--jt-motion-slow) var(--jt-motion-easing); }
+.primary, .match-high { background: var(--jt-color-primary); }
+.match-mid { background: var(--jt-color-text-secondary); }
+.match-low { background: var(--jt-color-warning); }

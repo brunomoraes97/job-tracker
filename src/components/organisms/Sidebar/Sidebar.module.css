@@ -1,0 +1,12 @@
+.sidebar { width: var(--jt-size-sidebar); flex-shrink: 0; min-height: 100%; background: var(--jt-color-sidebar-bg); color: var(--jt-color-sidebar-text); display: flex; flex-direction: column; gap: var(--jt-space-7); padding: var(--jt-space-7) var(--jt-space-4); }
+.brand { display: flex; flex-direction: column; gap: 2px; padding: 0 var(--jt-space-3); }
+.name { font-family: var(--jt-font-display); font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
+.tagline { font-size: var(--jt-text-caption-size); color: var(--jt-color-sidebar-text-subtle); }
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.section { display: flex; flex-direction: column; gap: var(--jt-space-1-5); }
+.sectionTitle { padding: 0 var(--jt-space-3); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--jt-color-sidebar-text-subtle); }
+.user { margin-top: auto; display: flex; gap: var(--jt-space-3); align-items: center; padding: var(--jt-space-3); border-radius: var(--jt-radius-lg); background: var(--jt-color-sidebar-raised); color: var(--jt-color-sidebar-text); }
+.user:hover { color: var(--jt-color-text-inverse); background: var(--jt-color-sidebar-active); }
+.userText { display: flex; flex-direction: column; gap: 2px; }
+.userName { font-size: var(--jt-text-small-size); font-weight: 500; }
+.userSub { font-size: var(--jt-text-caption-size); color: var(--jt-color-sidebar-text-subtle); }

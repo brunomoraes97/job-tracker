@@ -1,0 +1,1 @@
+.list { display: flex; flex-wrap: wrap; gap: var(--jt-space-1-5); margin: 0; padding: 0; list-style: none; }

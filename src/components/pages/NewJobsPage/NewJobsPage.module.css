@@ -1,0 +1,3 @@
+.toolbar { display: flex; gap: var(--jt-space-2-5); align-items: center; flex-wrap: wrap; }
+.search { width: 340px; height: 42px; }
+.placeholder { width: var(--jt-size-detail-panel); flex-shrink: 0; display: grid; place-items: center; padding: var(--jt-space-8); text-align: center; color: var(--jt-color-text-muted); border: 1px dashed var(--jt-color-border-strong); border-radius: var(--jt-radius-2xl); }

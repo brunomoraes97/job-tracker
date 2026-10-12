@@ -1,0 +1,3 @@
+.page { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.comfortable { padding: var(--jt-space-8) var(--jt-space-9); gap: var(--jt-space-5); }
+.compact { padding: var(--jt-space-7) var(--jt-space-8); gap: var(--jt-space-4-5); }

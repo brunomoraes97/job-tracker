@@ -1,0 +1,8 @@
+.item { display: flex; gap: var(--jt-space-2-5); padding: 11px 12px; border-radius: var(--jt-radius-lg); border: 1px solid var(--jt-color-border); background: var(--jt-color-surface); }
+.sym { width: 22px; height: 22px; flex-shrink: 0; border-radius: var(--jt-radius-sm); display: flex; align-items: center; justify-content: center; font-family: var(--jt-font-mono); font-size: 12px; font-weight: 600; }
+.add { background: var(--jt-color-primary-highlight); color: var(--jt-color-primary-hover); }
+.move { background: var(--jt-color-info-soft); color: var(--jt-color-info-strong); }
+.cut { background: var(--jt-color-warning-soft); color: var(--jt-color-warning-strong); }
+.body { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.title { font-size: var(--jt-text-small-size); font-weight: 600; }
+.desc { font-size: var(--jt-text-caption-size); line-height: 1.4; color: var(--jt-color-text-muted); }

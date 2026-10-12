@@ -1,0 +1,6 @@
+.group { display: inline-flex; gap: 2px; padding: 3px; background: var(--jt-color-track); border-radius: var(--jt-radius-lg); }
+.full { display: flex; }
+.full .item { flex: 1; min-width: 0; padding: 0 var(--jt-space-1-5); font-size: var(--jt-text-caption-size); overflow: hidden; text-overflow: ellipsis; }
+.item { height: 34px; padding: 0 var(--jt-space-3-5); border: 0; border-radius: var(--jt-radius-md); background: transparent; color: var(--jt-color-text-muted); font-size: var(--jt-text-small-size); cursor: pointer; white-space: nowrap; }
+.item:hover:not(.active) { color: var(--jt-color-text); }
+.active { background: var(--jt-color-surface); color: var(--jt-color-text); font-weight: var(--jt-font-weight-semibold); box-shadow: var(--jt-shadow-sm); }

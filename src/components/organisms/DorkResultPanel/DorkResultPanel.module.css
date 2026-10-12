@@ -1,0 +1,5 @@
+.count { font-family: var(--jt-font-mono); color: var(--jt-color-sidebar-text-subtle); }
+.over { color: var(--jt-dork-exclusions-dark); }
+.actions { display: flex; gap: var(--jt-space-2-5); flex-wrap: wrap; }
+.save { flex: 1; }
+.warn { margin: 0; font-size: var(--jt-text-small-size); color: var(--jt-dork-exclusions-dark); }

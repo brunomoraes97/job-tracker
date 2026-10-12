@@ -1,0 +1,1 @@
+.stage { display: flex; gap: var(--jt-space-5); justify-content: center; align-items: flex-start; padding: var(--jt-space-5); background: var(--jt-color-canvas-deep); border-radius: var(--jt-radius-2xl); overflow: auto; flex: 1; min-height: 0; }

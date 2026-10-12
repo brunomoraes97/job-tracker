@@ -1,0 +1,13 @@
+.page { background: #fff; color: var(--jt-color-text); box-shadow: var(--jt-shadow-md); padding: 6.6% 7%; display: flex; flex-direction: column; gap: 1.1em; overflow: hidden; font-family: var(--jt-font-sans); line-height: 1.5; flex-shrink: 0; }
+.header { display: flex; flex-direction: column; gap: 0.2em; border-bottom: 1px solid var(--jt-color-text); padding-bottom: 0.9em; }
+.name { font-family: var(--jt-font-serif); font-size: 2.2em; font-weight: 600; letter-spacing: 0.04em; line-height: 1.1; }
+.title { font-size: 1.15em; font-weight: 500; }
+.contact { color: var(--jt-color-text-muted); }
+.section { display: flex; flex-direction: column; gap: 0.3em; }
+.h { margin: 0; font-size: 1.02em; font-weight: 600; letter-spacing: 0.12em; }
+.p { margin: 0; }
+.entry { display: flex; flex-direction: column; gap: 0.25em; margin-bottom: 0.3em; }
+.entryHead { display: flex; justify-content: space-between; gap: 1em; font-weight: 600; }
+.period { font-weight: 400; color: var(--jt-color-text-muted); white-space: nowrap; }
+.mark { background: var(--jt-color-primary-highlight); color: inherit; }
+.plain { background: none; color: inherit; }

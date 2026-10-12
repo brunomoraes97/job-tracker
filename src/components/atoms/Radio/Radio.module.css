@@ -1,0 +1,2 @@
+.row { display: flex; align-items: center; gap: var(--jt-space-2-5); min-height: 30px; font-size: var(--jt-text-body-size); cursor: pointer; }
+.dot { width: 18px; height: 18px; margin: 0; accent-color: var(--jt-color-primary); }

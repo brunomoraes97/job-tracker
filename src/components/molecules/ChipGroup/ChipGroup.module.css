@@ -1,0 +1,2 @@
+.group { display: flex; flex-wrap: wrap; align-items: center; gap: var(--jt-space-2); }
+.legend { font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }

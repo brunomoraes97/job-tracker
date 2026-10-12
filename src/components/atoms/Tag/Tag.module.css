@@ -1,0 +1,8 @@
+.tag { display: inline-flex; align-items: center; border-radius: var(--jt-radius-sm); white-space: nowrap; color: var(--jt-color-text-secondary); }
+.sm { padding: 3px 8px; font-size: var(--jt-text-caption-size); }
+.md { padding: 4px 10px; font-size: var(--jt-text-small-size); }
+.mono { font-family: var(--jt-font-mono); }
+.neutral { background: var(--jt-color-surface-chip); }
+.outline { border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); }
+.hit { background: var(--jt-color-primary-soft); color: var(--jt-color-primary-hover); }
+.miss { border: 1px dashed var(--jt-color-warning-border); color: var(--jt-color-warning-strong); }

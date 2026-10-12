@@ -1,0 +1,7 @@
+.item { display: flex; gap: var(--jt-space-3); align-items: center; }
+.date { width: 46px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding: 5px 0; border-radius: var(--jt-radius-md); background: var(--jt-color-surface-chip); }
+.dow { font-size: 11px; color: var(--jt-color-text-muted); }
+.day { font-size: 16px; font-weight: 600; }
+.body { display: flex; flex-direction: column; gap: 2px; font-size: var(--jt-text-small-size); }
+.title { font-weight: 600; }
+.sub { color: var(--jt-color-text-muted); }

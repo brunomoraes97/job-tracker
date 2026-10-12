@@ -1,0 +1,1 @@
+.board { display: flex; gap: var(--jt-space-3-5); overflow-x: auto; padding-bottom: var(--jt-space-2); }

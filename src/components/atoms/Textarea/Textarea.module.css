@@ -1,0 +1,4 @@
+.textarea { width: 100%; padding: var(--jt-space-2-5) var(--jt-space-3); border-radius: var(--jt-radius-md); border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); font-size: var(--jt-text-body-size); line-height: var(--jt-text-body-line-height); resize: none; }
+.textarea:focus-visible { border-color: var(--jt-color-primary); }
+.textarea::placeholder { color: var(--jt-color-text-subtle); }
+.invalid { border-color: var(--jt-color-danger); }
