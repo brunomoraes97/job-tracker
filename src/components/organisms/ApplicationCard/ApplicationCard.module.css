@@ -9,3 +9,4 @@
 .docs li { font-size: 11px; padding: 2px 6px; border-radius: var(--jt-radius-xs); background: var(--jt-color-surface-chip); color: var(--jt-color-text-secondary); }
 .next { font-size: var(--jt-text-caption-size); color: var(--jt-color-primary-hover); }
 .overdue { font-weight: 500; color: var(--jt-color-warning-strong); }
+.move { margin-top: 2px; height: 30px; padding: 0 6px; border-radius: var(--jt-radius-sm); border: 1px solid var(--jt-color-border); background: var(--jt-color-surface-sunken); font-size: var(--jt-text-caption-size); color: var(--jt-color-text-secondary); }

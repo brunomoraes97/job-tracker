@@ -26,7 +26,7 @@ export function Sidebar({
   onNavigate,
 }: SidebarProps) {
   return (
-    <aside className={styles.sidebar}>
+    <aside className={styles.sidebar} aria-label="Navegação lateral">
       <div className={styles.brand}>
         <span className={styles.name}>{brand.name}</span>
         <span className={styles.tagline}>{brand.tagline}</span>

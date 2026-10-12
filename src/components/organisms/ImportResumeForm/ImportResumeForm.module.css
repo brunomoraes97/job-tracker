@@ -1,0 +1,14 @@
+.form { display: flex; flex-direction: column; gap: var(--jt-space-4); }
+.fieldset { margin: 0; padding: 0; border: 0; }
+.legend { padding: 0; margin-bottom: var(--jt-space-2); font-size: var(--jt-text-small-size); font-weight: 500; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--jt-space-2-5); }
+.file { display: flex; flex-direction: column; gap: var(--jt-space-1-5); }
+.fileLabel { font-size: var(--jt-text-small-size); font-weight: 500; }
+.fileInput { font-size: var(--jt-text-small-size); }
+.fileName { font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }
+.done { display: flex; flex-direction: column; gap: var(--jt-space-2); align-items: flex-start; padding: var(--jt-space-3); border-radius: var(--jt-radius-lg); background: var(--jt-color-primary-soft); color: var(--jt-color-primary-hover); font-size: var(--jt-text-small-size); }
+.error { margin: 0; color: var(--jt-color-danger-strong); font-size: var(--jt-text-small-size); }
+.note { margin: 0; font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }
+.actions { display: flex; gap: var(--jt-space-2-5); }
+.actions > * { flex: 1; }
+.submit { flex: 2; }

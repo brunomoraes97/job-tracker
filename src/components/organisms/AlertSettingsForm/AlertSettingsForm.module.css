@@ -1,0 +1,10 @@
+.form { display: flex; flex-direction: column; gap: var(--jt-space-5); }
+.row { display: flex; justify-content: space-between; align-items: center; gap: var(--jt-space-3); }
+.lead { font-size: var(--jt-text-body-size); font-weight: 500; }
+.fieldset { margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: var(--jt-space-4); min-width: 0; }
+.fieldset:disabled { opacity: 0.55; }
+.hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--jt-space-3); }
+.actions { display: flex; gap: var(--jt-space-2-5); }
+.actions > * { flex: 1; }
+.submit { flex: 2; }

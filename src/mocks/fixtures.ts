@@ -87,10 +87,26 @@ export const jobs: Job[] = [
       { label: 'Idioma', value: 100 },
     ],
   },
-  { id: 'j2', title: 'Staff Software Engineer, Platform', company: { name: 'Tessera Health', monogram: 'TH', tint: 'violet' }, location: 'Remoto · fusos dos EUA', tags: ['Go', 'Kubernetes', 'Terraform', 'AWS'], salary: 'US$ 150–185k', source: 'Lever', postedLabel: 'há 5 h', match: 88, isNew: true },
-  { id: 'j3', title: 'Backend Engineer, Payments', company: { name: 'Kiln Pay', monogram: 'KP', tint: 'amber' }, location: 'Remoto · Europa', tags: ['Go', 'gRPC', 'PostgreSQL'], salary: '€ 75–95k', source: 'LinkedIn', postedLabel: 'há 9 h', match: 83, isNew: true },
-  { id: 'j4', title: 'Senior Software Engineer, AI Agents', company: { name: 'Northbeam Labs', monogram: 'NL', tint: 'stone' }, location: 'Remoto · global', tags: ['Python', 'AWS Bedrock', 'LangGraph'], salary: 'US$ 120–160k', source: 'Wellfound', postedLabel: 'ontem', match: 81 },
-  { id: 'j5', title: 'Backend Engineer (Java)', company: { name: 'Vireo Commerce', monogram: 'VC', tint: 'amber' }, location: 'Híbrido · Lisboa — fora das suas preferências', tags: ['Java', 'Spring', 'Kafka'], salary: '€ 60–70k', source: 'LinkedIn', postedLabel: 'há 2 dias', match: 58 },
+  { id: 'j2', title: 'Staff Software Engineer, Platform', company: { name: 'Tessera Health', monogram: 'TH', tint: 'violet' }, location: 'Remoto · fusos dos EUA', tags: ['Go', 'Kubernetes', 'Terraform', 'AWS'], salary: 'US$ 150–185k', source: 'Lever', postedLabel: 'há 5 h', match: 88, isNew: true,
+    summary: 'Time de plataforma de saúde digital busca Staff Engineer para evoluir a plataforma interna (Kubernetes, Terraform) e serviços em Go na AWS. Remoto em fusos dos EUA.',
+    highlights: ['Remoto · fusos dos EUA', 'Contractor aceito', 'US$ 150–185k'],
+    keywordsHit: ['Go', 'AWS', 'APIs', 'PostgreSQL'], keywordsMissing: ['Kubernetes', 'Terraform'],
+    fit: [{ label: 'Stack técnica', value: 78 }, { label: 'Senioridade', value: 90 }, { label: 'Fuso / localização', value: 95 }, { label: 'Idioma', value: 100 }] },
+  { id: 'j3', title: 'Backend Engineer, Payments', company: { name: 'Kiln Pay', monogram: 'KP', tint: 'amber' }, location: 'Remoto · Europa', tags: ['Go', 'gRPC', 'PostgreSQL'], salary: '€ 75–95k', source: 'LinkedIn', postedLabel: 'há 9 h', match: 83, isNew: true,
+    summary: 'Fintech europeia procura backend para o time de pagamentos: serviços em Go com gRPC e PostgreSQL, foco em confiabilidade e conciliação.',
+    highlights: ['Remoto · Europa', '€ 75–95k'],
+    keywordsHit: ['Go', 'PostgreSQL', 'APIs'], keywordsMissing: ['gRPC'],
+    fit: [{ label: 'Stack técnica', value: 85 }, { label: 'Senioridade', value: 85 }, { label: 'Fuso / localização', value: 70 }, { label: 'Idioma', value: 100 }] },
+  { id: 'j4', title: 'Senior Software Engineer, AI Agents', company: { name: 'Northbeam Labs', monogram: 'NL', tint: 'stone' }, location: 'Remoto · global', tags: ['Python', 'AWS Bedrock', 'LangGraph'], salary: 'US$ 120–160k', source: 'Wellfound', postedLabel: 'ontem', match: 81,
+    summary: 'Startup de IA aplicada contrata engenheiro(a) sênior para construir agentes com LangGraph e AWS Bedrock em Python, integrados a sistemas de clientes.',
+    highlights: ['Remoto · global', 'Contractor aceito', 'US$ 120–160k'],
+    keywordsHit: ['Python', 'AWS Bedrock', 'LangGraph', 'Agentes de IA'], keywordsMissing: ['RAG em produção'],
+    fit: [{ label: 'Stack técnica', value: 80 }, { label: 'Senioridade', value: 85 }, { label: 'Fuso / localização', value: 75 }, { label: 'Idioma', value: 100 }] },
+  { id: 'j5', title: 'Backend Engineer (Java)', company: { name: 'Vireo Commerce', monogram: 'VC', tint: 'amber' }, location: 'Híbrido · Lisboa — fora das suas preferências', tags: ['Java', 'Spring', 'Kafka'], salary: '€ 60–70k', source: 'LinkedIn', postedLabel: 'há 2 dias', match: 58,
+    summary: 'E-commerce em Lisboa busca backend Java/Spring com Kafka, em regime híbrido (3 dias no escritório).',
+    highlights: ['Híbrido · Lisboa', '€ 60–70k'],
+    keywordsHit: ['Java', 'APIs'], keywordsMissing: ['Spring', 'Kafka'],
+    fit: [{ label: 'Stack técnica', value: 55 }, { label: 'Senioridade', value: 80 }, { label: 'Fuso / localização', value: 20 }, { label: 'Idioma', value: 90 }] },
 ];
 
 export const stages: Stage[] = [
@@ -384,3 +400,16 @@ export const sidebarProps = {
   savedSearches: savedSearchSummaries,
   user: { name: user.name, displayName: user.shortName, subtitle: user.resumeVersion, href: '#profile' },
 };
+
+export const alertChannels: ToggleOption[] = [
+  { id: 'email', label: 'E-mail', description: '1997mbrunomoraes@gmail.com', checked: true },
+  { id: 'push', label: 'Notificação no navegador', checked: false },
+  { id: 'slack', label: 'Slack', description: 'mensagem direta', checked: false },
+];
+
+export const resumeVersions = [
+  { id: 'v4', label: 'v4', date: '12 set 2026', note: 'Adicionadas skills de agentes de IA e reescrito o resumo.', documents: 11, current: true },
+  { id: 'v3', label: 'v3', date: '28 ago 2026', note: 'Experiência na BamBams detalhada (ECS, Lambda, CDK).', documents: 7 },
+  { id: 'v2', label: 'v2', date: '02 ago 2026', note: 'Suporte & onboarding agrupados em um bloco.', documents: 3 },
+  { id: 'v1', label: 'v1', date: '15 jul 2026', note: 'Importado do PDF original.', documents: 0 },
+];

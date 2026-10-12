@@ -21,7 +21,7 @@ export interface StudioSourcePanelProps {
 export function StudioSourcePanel(p: StudioSourcePanelProps) {
   const pct = p.keywordsTotal ? Math.round((p.keywordsCovered / p.keywordsTotal) * 100) : 0;
   return (
-    <Panel as="aside" padding="sm">
+    <Panel as="aside" padding="sm" label="Fonte e blocos do documento">
       <div className={styles.group}>
         <span className={styles.overline}>Fonte</span>
         <button type="button" className={styles.source} onClick={p.onOpenSource}>{p.sourceLabel} ↗</button>

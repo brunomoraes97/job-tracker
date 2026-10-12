@@ -14,4 +14,5 @@ export * from './OptionCard';
 export * from './Panel';
 export * from './SegmentedControl';
 export * from './StatTile';
+export * from './Toast';
 export * from './ToggleList';

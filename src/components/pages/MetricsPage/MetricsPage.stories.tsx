@@ -13,7 +13,7 @@ const rows = applications.filter((a) => a.appliedOn);
 /** Ordenação feita pelo "container" da story — a tabela só recebe o resultado. */
 const sortRows = (list: Application[], s: ApplicationSort) => {
   const dir = s.direction === 'asc' ? 1 : -1;
-  const key = (a: Application) => (s.key === 'appliedOn' ? (a.appliedOn ?? '').split('/').reverse().join('') : s.key === 'match' ? String(a.match).padStart(3, '0') : a.company);
+  const key = (a: Application) => (s.key === 'appliedOn' ? (a.appliedOn ?? '').split('/').reverse().join('') : s.key === 'match' ? String(a.match ?? 0).padStart(3, '0') : a.company);
   return [...list].sort((a, b) => key(a).localeCompare(key(b)) * dir);
 };
 

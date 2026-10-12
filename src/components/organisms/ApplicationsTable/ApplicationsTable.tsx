@@ -60,7 +60,7 @@ export function ApplicationsTable({ applications, stageLabels, sort, onSortChang
               <td><span className={cx(styles.pill, styles[a.stage])}>{stageLabels[a.stage]}</span></td>
               <td className={styles.mono}>{a.appliedOn ?? '—'}</td>
               <td className={styles.muted}>{a.source}</td>
-              <td className={cx(styles.mono, styles.right)}>{a.match}%</td>
+              <td className={cx(styles.mono, styles.right)}>{a.match == null ? '—' : `${a.match}%`}</td>
               <td>
                 <button type="button" className={styles.link} onClick={() => onOpenDocuments?.(a.id)}>{a.documents.join(' + ')}</button>
               </td>

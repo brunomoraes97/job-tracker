@@ -18,7 +18,7 @@ export interface DocumentPreviewProps {
 export function DocumentPreview({ view, resume, coverLetter, pageWidth, showHighlights = true }: DocumentPreviewProps) {
   const width = pageWidth ?? (view === 'both' ? 380 : 480);
   return (
-    <div className={styles.stage}>
+    <div className={styles.stage} role="region" aria-label="Pré-visualização dos documentos" tabIndex={0}>
       {view !== 'coverLetter' && <ResumeDocument data={resume} width={width} showHighlights={showHighlights} />}
       {view !== 'resume' && <CoverLetterDocument data={coverLetter} width={width} showHighlights={showHighlights} />}
     </div>

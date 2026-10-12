@@ -50,7 +50,8 @@ export interface Application {
   meta: string;
   appliedOn?: string;
   source: string;
-  match: number;
+  /** Match com o currículo base (ausente em candidaturas manuais). */
+  match?: number;
   documents: string[];
   nextStep: string;
   nextStepOverdue?: boolean;

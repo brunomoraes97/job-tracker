@@ -1,0 +1,5 @@
+.page { padding: var(--jt-space-8) var(--jt-space-9); background: var(--jt-color-surface); display: flex; flex-direction: column; gap: var(--jt-space-4); }
+.header { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--jt-space-4); flex-wrap: wrap; }
+.title { margin: 0; font-family: var(--jt-font-display); font-size: var(--jt-text-display-size); font-weight: 600; }
+.links { display: flex; gap: var(--jt-space-5); font-size: var(--jt-text-body-size); font-weight: 500; }
+.h2 { margin: var(--jt-space-4) 0 0; font-family: var(--jt-font-display); font-size: var(--jt-text-heading-size); font-weight: 600; }
