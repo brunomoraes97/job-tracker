@@ -1,0 +1,125 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorPalette, StatusPalette, TintPalette, DorkPalette, FontFamilies, TypeScale, SpaceScale, RadiusScale, ShadowScale, SimpleTokenTable, IconGallery, MotionDemo } from './blocks';
+
+<Meta title="Design System/Visão geral" />
+
+# Radar — Design System
+
+O Radar é uma ferramenta de trabalho para quem está procurando emprego: lê muito, compara muito e decide rápido. O visual é **editorial e calmo** — papel quente, tinta escura, um único verde-petróleo de ação — para que as informações que importam (match, prazo, próximo passo) sejam as únicas coisas que chamam atenção.
+
+## Princípios
+
+1. **Uma ação principal por região.** Só um botão `primary` por painel. O resto é `secondary`, `outline` ou `ghost`.
+2. **Cor carrega significado.** Verde-petróleo = ação ou "combina"; âmbar = atenção (palavra-chave ausente, follow-up atrasado); as etapas do funil têm cores próprias que **diferem em luminosidade**, não só em matiz.
+3. **Números em destaque, texto em silêncio.** Match e métricas usam Fraunces grande; metadados usam Plex Sans pequeno em `textMuted`; valores técnicos (salário, dork, contagens) usam Plex Mono.
+4. **Honestidade visível.** Trechos reescritos para uma vaga aparecem com destaque `primaryHighlight`; palavras-chave que faltam aparecem tracejadas — o produto nunca esconde o que inventaria.
+5. **Acessível por padrão.** Controles reais (`button`, `a`, `input`), alvos ≥ 44 px nos botões padrão, foco visível (`--jt-shadow-focus`), contraste de texto ≥ 4.5:1.
+
+## Como os tokens fluem
+
+```
+src/design-system/tokens.ts   ← fonte única de verdade (objetos TS tipados)
+        │  flattenTokens()
+        ▼
+<GlobalStyles />              ← injeta :root { --jt-* } + estilos base
+        │
+        ▼
+*.module.css                  ← componentes só usam var(--jt-*)
+```
+
+Nome de variável = caminho do token em kebab-case: `color.primarySoft` → `--jt-color-primary-soft`. Em TS use `cssVar('color', 'primarySoft')`. A referência completa está em **Design System › Tokens (referência)**.
+
+## Cores
+
+### Marca
+<ColorPalette group="Marca" />
+
+### Superfícies
+<ColorPalette group="Superfícies" />
+
+### Bordas
+<ColorPalette group="Bordas" />
+
+### Texto
+Use `text` para conteúdo, `textSecondary` para corpo longo, `textMuted` para metadados e `textSubtle` só para placeholders e elementos decorativos (não passa 4.5:1 em texto pequeno).
+<ColorPalette group="Texto" />
+
+### Feedback
+<ColorPalette group="Feedback" />
+
+### Navegação lateral
+<ColorPalette group="Navegação lateral" />
+
+### Código e sobreposição
+<ColorPalette group="Código e sobreposição" />
+
+### Etapas do funil (`status`)
+<StatusPalette />
+
+### Monogramas de empresa (`tint`)
+<TintPalette />
+
+### Partes do Google Dork (`dork`)
+`dark` colore a consulta sobre fundo de código; `light` colore a legenda em "Anatomia da busca".
+<DorkPalette />
+
+## Tipografia
+
+<FontFamilies />
+
+Fontes são servidas localmente via `@fontsource` (sem dependência de CDN). Estilos nomeados viram variáveis `--jt-text-{estilo}-{family|size|line-height|weight|tracking}` e alimentam `<Heading variant>` e `<Text variant>`.
+
+<TypeScale />
+
+## Espaçamento
+
+Escala em base 4 px. Layouts usam `gap` com flex/grid — nunca margens entre irmãos.
+<SpaceScale />
+
+## Forma e profundidade
+
+### Raios
+`md` para campos, `lg` para botões, `xl` para cards, `2xl` para painéis, `pill` para chips.
+<RadiusScale />
+
+### Sombras
+O produto é quase plano: sombras só para o que flutua (página de PDF, drawer) e para o anel de foco.
+<ShadowScale />
+
+## Tamanhos, movimento e camadas
+
+<SimpleTokenTable group="size" />
+<SimpleTokenTable group="motion" />
+<MotionDemo />
+<SimpleTokenTable group="zIndex" />
+
+## Iconografia
+
+Traço único (24 × 24, stroke 2, pontas arredondadas). Ícones sem texto exigem `label` (o `IconButton` torna isso obrigatório). Nunca emoji.
+<IconGallery />
+
+## Arquitetura de componentes (Atomic Design)
+
+| Nível | Pasta | O que é | Exemplos |
+|---|---|---|---|
+| **Atoms** | `components/atoms` | Menor unidade com estilo próprio; sem conhecimento de domínio além de tipos simples | Button, Input, Chip, Tag, Monogram, Icon |
+| **Molecules** | `components/molecules` | Combinação de átomos com uma função | FormField, SegmentedControl, FitBar, MatchScore, DorkQuery |
+| **Organisms** | `components/organisms` | Seções completas da interface, com dados de domínio | JobCard, KanbanBoard, ApplicationForm, DorkBuilderForm |
+| **Templates** | `components/templates` | Estrutura de página sem conteúdo | AppShell, PageLayout, SplitLayout, ThreePaneLayout |
+| **Pages** | `components/pages` | Templates preenchidos com organismos — uma por tela | NewJobsPage, StudioPage, DorkingPage |
+
+## Contrato de props (event-driven)
+
+Toda a camada de apresentação segue o mesmo contrato:
+
+- **Governado por props.** Nenhum componente busca dados, lê URL, usa `localStorage` ou guarda estado de negócio. O que aparece na tela é função das props.
+- **Controlado.** Campos recebem `value`/`checked` e emitem `onChange(valor)`; seleções recebem `selected`/`value` e emitem `onToggle`/`onChange`; quem decide o novo estado é o pai.
+- **Eventos com intenção.** Callbacks nomeados pelo que o usuário quis fazer — `onGenerate(jobId)`, `onSaveAsSearch(query)`, `onUndo(changeId)` — e não por detalhes de DOM.
+- **Lógica pura fora da UI.** Regras como compilar um dork (`lib/dork.ts → buildDork`) ficam em funções puras testadas; a página recebe o `result` pronto.
+- **Stories como "containers".** Nas stories interativas, `useArgs` faz o papel do estado da aplicação: recebe o evento, atualiza as args e o componente re-renderiza. Os eventos aparecem no painel **Actions**.
+
+## Conteúdo e voz
+
+- Português do Brasil, frases curtas, verbo no imperativo nos botões ("Gerar CV + cover letter", "Salvar e ativar").
+- Documentos gerados saem em inglês por padrão (vagas internacionais), configurável.
+- Dados ausentes viram marcadores explícitos — `[início]`, `[resultado mensurável]`, `US$ [valor]` — nunca números inventados.

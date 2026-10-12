@@ -1,0 +1,10 @@
+.wrap { display: flex; align-items: center; gap: var(--jt-space-2-5); height: var(--jt-size-control-md); padding: 0 var(--jt-space-3); border-radius: var(--jt-radius-md); border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); }
+.wrap:focus-within { border-color: var(--jt-color-primary); box-shadow: var(--jt-shadow-focus); }
+.dark { background: var(--jt-color-code-bg); border-color: var(--jt-color-code-border); color: var(--jt-color-code-text); }
+.invalid { border-color: var(--jt-color-danger); }
+.icon { color: var(--jt-color-text-muted); flex-shrink: 0; }
+.input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: var(--jt-text-body-size); color: inherit; }
+.input:focus-visible { box-shadow: none; }
+.input::placeholder { color: var(--jt-color-text-subtle); }
+.mono { font-family: var(--jt-font-mono); }
+.input[type='date'] { color-scheme: light; }

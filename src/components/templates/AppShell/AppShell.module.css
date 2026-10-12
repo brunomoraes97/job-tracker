@@ -1,0 +1,2 @@
+.shell { position: relative; display: flex; min-height: 100vh; background: var(--jt-color-canvas); }
+.main { flex: 1; min-width: 0; display: flex; flex-direction: column; }

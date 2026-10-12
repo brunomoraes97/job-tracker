@@ -1,0 +1,7 @@
+.item { display: flex; justify-content: space-between; align-items: center; gap: var(--jt-space-2); border-radius: var(--jt-radius-md); color: var(--jt-color-sidebar-text-muted); text-decoration: none; }
+.item:hover { color: var(--jt-color-text-inverse); background: var(--jt-color-sidebar-raised); }
+.primary { padding: 11px 12px; font-size: var(--jt-text-body-size); }
+.secondary { padding: 8px 12px; font-size: var(--jt-text-small-size); line-height: 1.35; }
+.active, .active:hover { background: var(--jt-color-sidebar-active); color: var(--jt-color-text-inverse); font-weight: var(--jt-font-weight-medium); }
+.badge { font-family: var(--jt-font-mono); font-size: var(--jt-text-caption-size); color: var(--jt-color-sidebar-text-subtle); }
+.active .badge, .secondary .badge { color: var(--jt-color-sidebar-accent); }

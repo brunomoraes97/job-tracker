@@ -1,0 +1,2 @@
+.select { width: 100%; height: var(--jt-size-control-md); padding: 0 var(--jt-space-2-5); border-radius: var(--jt-radius-md); border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); font-size: var(--jt-text-body-size); }
+.select:focus-visible { border-color: var(--jt-color-primary); }

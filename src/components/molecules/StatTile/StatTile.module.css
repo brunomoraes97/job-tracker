@@ -1,0 +1,4 @@
+.tile { display: flex; flex-direction: column; gap: var(--jt-space-1-5); padding: var(--jt-space-4) var(--jt-space-4-5); background: var(--jt-color-surface); border: 1px solid var(--jt-color-border); border-radius: var(--jt-radius-xl); }
+.label { font-size: var(--jt-text-small-size); color: var(--jt-color-text-muted); }
+.value { font-family: var(--jt-font-display); font-size: 34px; font-weight: 600; line-height: 1; }
+.hint { font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }

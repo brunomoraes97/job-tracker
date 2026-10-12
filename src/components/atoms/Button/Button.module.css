@@ -1,0 +1,34 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jt-space-2);
+  border-radius: var(--jt-radius-lg);
+  border: 1px solid transparent;
+  font-family: var(--jt-font-sans);
+  font-weight: var(--jt-font-weight-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--jt-motion-fast) var(--jt-motion-easing), border-color var(--jt-motion-fast) var(--jt-motion-easing);
+}
+.button:disabled { cursor: not-allowed; opacity: 0.5; }
+.sm { height: var(--jt-size-control-sm); padding: 0 var(--jt-space-3); font-size: var(--jt-text-small-size); border-radius: var(--jt-radius-md); }
+.md { height: var(--jt-size-touch-min); padding: 0 var(--jt-space-4); font-size: var(--jt-text-body-size); }
+.lg { height: var(--jt-size-control-lg); padding: 0 var(--jt-space-5); font-size: var(--jt-text-body-lg-size); font-weight: var(--jt-font-weight-semibold); }
+.full { width: 100%; }
+
+.primary { background: var(--jt-color-primary); color: var(--jt-color-on-primary); font-weight: var(--jt-font-weight-semibold); }
+.primary:hover:not(:disabled) { background: var(--jt-color-primary-hover); color: var(--jt-color-on-primary); }
+
+.secondary { background: var(--jt-color-surface); border-color: var(--jt-color-border-strong); color: var(--jt-color-text); }
+.secondary:hover:not(:disabled) { background: var(--jt-color-surface-sunken); color: var(--jt-color-text); }
+
+.outline { background: var(--jt-color-surface); border-color: var(--jt-color-primary); color: var(--jt-color-primary-hover); font-weight: var(--jt-font-weight-semibold); }
+.outline:hover:not(:disabled) { background: var(--jt-color-primary-soft); color: var(--jt-color-primary-hover); }
+
+.ghost { background: transparent; color: var(--jt-color-text-muted); }
+.ghost:hover:not(:disabled) { background: var(--jt-color-track); color: var(--jt-color-text); }
+
+.inverse { background: var(--jt-color-code-raised); border-color: var(--jt-color-code-border); color: var(--jt-color-text-inverse); }
+.inverse:hover:not(:disabled) { background: var(--jt-color-sidebar-active); color: var(--jt-color-text-inverse); }

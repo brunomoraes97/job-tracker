@@ -1,0 +1,4 @@
+.list { margin: 0; display: flex; flex-direction: column; gap: 9px; font-size: var(--jt-text-small-size); }
+.row { display: flex; justify-content: space-between; gap: var(--jt-space-3); }
+.row dt { color: var(--jt-color-text-muted); }
+.row dd { margin: 0; text-align: right; }

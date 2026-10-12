@@ -1,0 +1,5 @@
+.card { display: flex; flex-direction: column; gap: var(--jt-space-1-5); padding: var(--jt-space-3-5); border-radius: var(--jt-radius-2xl); border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); cursor: pointer; }
+.checked { border: 2px solid var(--jt-color-primary); background: var(--jt-color-primary-soft); padding: calc(var(--jt-space-3-5) - 1px); }
+.radio { width: 18px; height: 18px; margin: 0; accent-color: var(--jt-color-primary); }
+.title { font-size: var(--jt-text-body-size); font-weight: 600; }
+.desc { font-size: var(--jt-text-caption-size); line-height: 1.4; color: var(--jt-color-text-muted); }

@@ -1,0 +1,4 @@
+.nav { font-size: var(--jt-text-small-size); color: var(--jt-color-text-muted); }
+.list { display: flex; flex-wrap: wrap; gap: var(--jt-space-1-5); margin: 0; padding: 0; list-style: none; }
+.item { display: inline-flex; gap: var(--jt-space-1-5); }
+.sep { color: var(--jt-color-text-subtle); }

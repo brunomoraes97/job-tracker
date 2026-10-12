@@ -1,0 +1,7 @@
+.dot { display: inline-block; border-radius: 50%; flex-shrink: 0; }
+.saved { background: var(--jt-status-saved-dot); }
+.applied { background: var(--jt-status-applied-dot); }
+.talking { background: var(--jt-status-talking-dot); }
+.interview { background: var(--jt-status-interview-dot); }
+.offer { background: var(--jt-status-offer-dot); }
+.closed { background: var(--jt-status-closed-dot); }

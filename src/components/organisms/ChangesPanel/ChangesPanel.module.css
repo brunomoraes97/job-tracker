@@ -1,0 +1,9 @@
+.count { font-family: var(--jt-font-mono); }
+.list { display: flex; flex-direction: column; gap: var(--jt-space-2-5); }
+.empty { margin: 0; font-size: var(--jt-text-small-size); color: var(--jt-color-text-muted); }
+.ask { display: flex; flex-direction: column; gap: var(--jt-space-2-5); }
+.overline { font-size: var(--jt-text-overline-size); font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--jt-color-text-muted); }
+.chips { display: flex; gap: var(--jt-space-1-5); flex-wrap: wrap; }
+.inputRow { display: flex; gap: var(--jt-space-1-5); }
+.inputRow > :first-child { flex: 1; }
+.note { margin: 0; font-size: 11px; line-height: 1.45; color: var(--jt-color-text-muted); }

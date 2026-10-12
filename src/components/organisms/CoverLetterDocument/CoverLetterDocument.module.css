@@ -1,0 +1,8 @@
+.page { background: #fff; color: var(--jt-color-text); box-shadow: var(--jt-shadow-md); padding: 8% 8.5%; display: flex; flex-direction: column; gap: 1em; overflow: hidden; font-family: var(--jt-font-serif); line-height: 1.6; flex-shrink: 0; }
+.sender { font-family: var(--jt-font-sans); display: flex; flex-direction: column; gap: 0.1em; }
+.senderName { font-size: 1.4em; font-weight: 600; }
+.muted { color: var(--jt-color-text-muted); }
+.p { margin: 0; }
+.closing { white-space: pre-line; }
+.mark { background: var(--jt-color-primary-highlight); color: inherit; }
+.plain { background: none; color: inherit; }

@@ -1,0 +1,11 @@
+.query { display: block; font-family: var(--jt-font-mono); color: var(--jt-color-code-text); background: var(--jt-color-code-bg); word-break: break-word; }
+.md { font-size: 15px; line-height: 1.75; }
+.sm { font-size: 12px; line-height: 1.6; padding: 10px 12px; border-radius: var(--jt-radius-md); }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.empty { color: var(--jt-color-sidebar-text-subtle); }
+.sites { color: var(--jt-dork-sites-dark); }
+.roles { color: var(--jt-dork-roles-dark); }
+.keywords { color: var(--jt-dork-keywords-dark); }
+.location { color: var(--jt-dork-location-dark); }
+.exclusions { color: var(--jt-dork-exclusions-dark); }
+.date { color: var(--jt-dork-date-dark); }

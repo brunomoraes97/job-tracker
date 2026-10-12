@@ -1,0 +1,7 @@
+.chip { display: inline-flex; align-items: center; gap: var(--jt-space-1-5); border-radius: var(--jt-radius-pill); border: 1px solid var(--jt-color-border-strong); background: var(--jt-color-surface); color: var(--jt-color-text-secondary); cursor: pointer; white-space: nowrap; transition: background var(--jt-motion-fast); }
+.chip:disabled, .chip[aria-disabled] { opacity: 0.5; cursor: not-allowed; }
+.md { height: 36px; padding: 0 var(--jt-space-3-5); font-size: var(--jt-text-small-size); }
+.sm { height: 30px; padding: 0 var(--jt-space-2-5); font-size: var(--jt-text-caption-size); }
+.withBox { padding-left: var(--jt-space-2); }
+.selected { border-color: var(--jt-color-primary); background: var(--jt-color-primary-soft); color: var(--jt-color-primary-hover); font-weight: var(--jt-font-weight-medium); }
+.box { width: 15px; height: 15px; margin: 0; accent-color: var(--jt-color-primary); }

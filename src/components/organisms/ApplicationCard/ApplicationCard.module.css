@@ -1,0 +1,11 @@
+.card { background: var(--jt-color-surface); border: 1px solid var(--jt-color-border); border-radius: var(--jt-radius-lg); padding: var(--jt-space-3); display: flex; flex-direction: column; gap: 7px; }
+.top { display: flex; justify-content: space-between; gap: var(--jt-space-2); font-size: var(--jt-text-caption-size); }
+.company { font-weight: 600; color: var(--jt-color-text-secondary); }
+.match { font-family: var(--jt-font-mono); color: var(--jt-color-text-muted); }
+.role { padding: 0; border: 0; background: none; text-align: left; cursor: pointer; font-size: var(--jt-text-body-size); font-weight: 600; line-height: 1.3; color: var(--jt-color-text); }
+.role:hover { color: var(--jt-color-primary); }
+.meta { font-size: var(--jt-text-caption-size); color: var(--jt-color-text-muted); }
+.docs { display: flex; gap: 5px; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.docs li { font-size: 11px; padding: 2px 6px; border-radius: var(--jt-radius-xs); background: var(--jt-color-surface-chip); color: var(--jt-color-text-secondary); }
+.next { font-size: var(--jt-text-caption-size); color: var(--jt-color-primary-hover); }
+.overdue { font-weight: 500; color: var(--jt-color-warning-strong); }

@@ -1,0 +1,7 @@
+.heading { margin: 0; color: var(--jt-color-text); }
+.display, .title, .heading, .subheading, .overline { font-family: var(--v-family); font-size: var(--v-size); line-height: var(--v-lh); font-weight: var(--v-weight); letter-spacing: var(--v-tracking); }
+.display { --v-family: var(--jt-text-display-family); --v-size: var(--jt-text-display-size); --v-lh: var(--jt-text-display-line-height); --v-weight: var(--jt-text-display-weight); --v-tracking: var(--jt-text-display-tracking); }
+.title { --v-family: var(--jt-text-title-family); --v-size: var(--jt-text-title-size); --v-lh: var(--jt-text-title-line-height); --v-weight: var(--jt-text-title-weight); --v-tracking: var(--jt-text-title-tracking); }
+.heading { --v-family: var(--jt-text-heading-family); --v-size: var(--jt-text-heading-size); --v-lh: var(--jt-text-heading-line-height); --v-weight: var(--jt-text-heading-weight); --v-tracking: var(--jt-text-heading-tracking); }
+.subheading { --v-family: var(--jt-text-subheading-family); --v-size: var(--jt-text-subheading-size); --v-lh: var(--jt-text-subheading-line-height); --v-weight: var(--jt-text-subheading-weight); --v-tracking: var(--jt-text-subheading-tracking); }
+.overline { --v-family: var(--jt-text-overline-family); --v-size: var(--jt-text-overline-size); --v-lh: var(--jt-text-overline-line-height); --v-weight: var(--jt-text-overline-weight); --v-tracking: var(--jt-text-overline-tracking); text-transform: uppercase; color: var(--jt-color-text-muted); }

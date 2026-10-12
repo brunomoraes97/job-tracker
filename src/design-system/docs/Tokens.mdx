@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { AllTokens } from './blocks';
+
+<Meta title="Design System/Tokens (referência)" />
+
+# Tokens — referência completa
+
+Lista gerada em tempo real a partir de `src/design-system/tokens.ts`. Copie o nome da variável para usar em CSS Modules.
+
+## Cores
+<AllTokens prefix="color" />
+
+## Status, tints e dork
+<AllTokens prefix="status" />
+<AllTokens prefix="tint" />
+<AllTokens prefix="dork" />
+
+## Tipografia
+<AllTokens prefix="font" />
+<AllTokens prefix="text" />
+
+## Espaçamento, raios, sombras, tamanhos, movimento e camadas
+<AllTokens prefix="space" />
+<AllTokens prefix="radius" />
+<AllTokens prefix="shadow" />
+<AllTokens prefix="size" />
+<AllTokens prefix="motion" />
+<AllTokens prefix="z-index" />

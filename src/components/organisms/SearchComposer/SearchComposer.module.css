@@ -1,0 +1,24 @@
+.callout { display: flex; gap: var(--jt-space-3); padding: var(--jt-space-3-5) var(--jt-space-4); border-radius: var(--jt-radius-lg); background: var(--jt-color-primary-soft); border: 1px solid var(--jt-color-primary-border); }
+.calloutIcon { color: var(--jt-color-primary-hover); flex-shrink: 0; margin-top: 1px; }
+.calloutBody { display: flex; flex-direction: column; gap: var(--jt-space-2); }
+.calloutTitle { font-size: var(--jt-text-body-size); color: var(--jt-color-primary-hover); }
+.calloutText { font-size: var(--jt-text-small-size); line-height: 1.5; color: #1F4A42; }
+.calloutActions { display: flex; align-items: center; gap: var(--jt-space-3-5); }
+.link { padding: 0; border: 0; background: none; font: inherit; font-size: var(--jt-text-small-size); font-weight: 500; color: var(--jt-color-primary); cursor: pointer; align-self: flex-start; }
+.section { display: flex; flex-direction: column; gap: var(--jt-space-2-5); }
+.step { font-size: var(--jt-text-small-size); font-weight: 600; }
+.criteria { margin: 0; display: flex; flex-direction: column; gap: var(--jt-space-1-5); }
+.criterion { display: flex; gap: var(--jt-space-2-5); align-items: baseline; font-size: var(--jt-text-small-size); }
+.criterion dt { width: 88px; flex-shrink: 0; color: var(--jt-color-text-muted); }
+.criterion dd { margin: 0; display: flex; gap: 5px; flex-wrap: wrap; }
+.value { padding: 2px 8px; border-radius: var(--jt-radius-sm); }
+.warning { background: var(--jt-color-warning-soft); color: var(--jt-color-warning-strong); }
+.info { background: var(--jt-color-info-soft); color: var(--jt-color-info-strong); }
+.violet { background: var(--jt-status-interview-bg); color: var(--jt-status-interview-fg); }
+.danger { background: var(--jt-color-danger-soft); color: var(--jt-color-danger-strong); }
+.primary, .neutral, .dark { background: var(--jt-color-primary-soft); color: var(--jt-color-primary-hover); }
+.dork { display: block; font-size: var(--jt-text-caption-size); line-height: 1.6; color: var(--jt-color-code-text); background: var(--jt-color-code-bg); border-radius: var(--jt-radius-md); padding: 10px 12px; word-break: break-word; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--jt-space-3); }
+.actions { display: flex; gap: var(--jt-space-2-5); }
+.actions > * { flex: 1; }
+.save { flex: 2; }

@@ -1,0 +1,3 @@
+.row { display: flex; gap: var(--jt-space-3-5); }
+.grow { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.side { width: 380px; flex-shrink: 0; display: flex; flex-direction: column; }
