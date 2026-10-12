@@ -11,10 +11,12 @@ export interface JobListProps {
   sortLabel: string;
   sourcesLabel?: string;
   emptyText?: string;
+  /** `list` = uma coluna · `grid` = cards em duas colunas. */
+  layout?: 'list' | 'grid';
   onSelectJob?: (id: string) => void;
 }
 
-export function JobList({ jobs, selectedId, totalLabel, sortLabel, sourcesLabel, emptyText = 'Nenhuma vaga com estes filtros.', onSelectJob }: JobListProps) {
+export function JobList({ jobs, selectedId, totalLabel, sortLabel, sourcesLabel, emptyText = 'Nenhuma vaga com estes filtros.', layout = 'list', onSelectJob }: JobListProps) {
   return (
     <section aria-label="Lista de vagas" className={styles.list}>
       <div className={styles.head}>
@@ -24,9 +26,11 @@ export function JobList({ jobs, selectedId, totalLabel, sortLabel, sourcesLabel,
         {sourcesLabel && <span>{sourcesLabel}</span>}
       </div>
       {jobs.length === 0 && <p className={styles.empty}>{emptyText}</p>}
-      {jobs.map((j) => (
-        <JobCard key={j.id} job={j} selected={j.id === selectedId} onSelect={onSelectJob} />
-      ))}
+      <div className={layout === 'grid' ? styles.grid : styles.stack}>
+        {jobs.map((j) => (
+          <JobCard key={j.id} job={j} selected={j.id === selectedId} onSelect={onSelectJob} />
+        ))}
+      </div>
     </section>
   );
 }

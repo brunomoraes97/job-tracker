@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useId, type ReactNode } from 'react';
 import { cx } from '@/lib/cx';
 import styles from './Panel.module.css';
 
@@ -15,15 +15,18 @@ export interface PanelProps {
   /** Ocupa a altura disponível e empurra o último filho para baixo com `margin-top:auto`. */
   stretch?: boolean;
   as?: 'section' | 'aside' | 'div' | 'article';
+  /** Nome acessível quando não há título visível. */
+  label?: string;
 }
 
-export function Panel({ title, titleVariant = 'subheading', aside, children, padding = 'md', tone = 'surface', stretch, as = 'section' }: PanelProps) {
+export function Panel({ title, titleVariant = 'subheading', aside, children, padding = 'md', tone = 'surface', stretch, as = 'section', label }: PanelProps) {
   const Tag = as;
+  const titleId = useId();
   return (
-    <Tag className={cx(styles.panel, styles[padding], styles[tone], stretch && styles.stretch)}>
+    <Tag aria-labelledby={title ? titleId : undefined} aria-label={title ? undefined : label} className={cx(styles.panel, styles[padding], styles[tone], stretch && styles.stretch)}>
       {(title || aside) && (
         <header className={styles.header}>
-          {title && <h2 className={cx(styles.title, styles[titleVariant])}>{title}</h2>}
+          {title && <h2 id={titleId} className={cx(styles.title, styles[titleVariant])}>{title}</h2>}
           {aside && <div className={styles.aside}>{aside}</div>}
         </header>
       )}

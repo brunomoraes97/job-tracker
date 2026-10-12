@@ -6,6 +6,7 @@ const config: StorybookConfig = {
   addons: [
     { name: '@storybook/addon-docs', options: { mdxPluginOptions: { mdxCompileOptions: { remarkPlugins: [remarkGfm] } } } },
     '@storybook/addon-a11y',
+    '@storybook/addon-vitest',
   ],
   framework: { name: '@storybook/react-vite', options: {} },
   docs: { defaultName: 'Documentação' },

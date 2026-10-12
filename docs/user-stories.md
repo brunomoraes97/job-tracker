@@ -42,13 +42,20 @@ Persona padrão: **candidato(a)**, engenheiro(a) sênior buscando vagas remotas 
 - *Descartar* emite `onDiscard(jobId)` e remove a vaga do feed.
 
 ### US-1.5 · Alternar visualizações — S
-**Como** candidato, **quero** alternar entre Lista, Cards, Kanban e Tabela, **para** ver as vagas do jeito mais útil no momento.
+**Como** candidato, **quero** alternar entre Lista e Cards, **para** ver as vagas do jeito mais útil no momento.
 - O seletor indica a visualização ativa e emite `onViewChange(view)`.
+- “Cards” mostra as vagas em grade de duas colunas; “Lista”, em uma coluna (`JobList layout`).
+- Kanban e Tabela são visões de **candidaturas** (Épicos 7 e 8), não do feed de vagas.
 
 *Componentes:* `SegmentedControl`.
 
-### US-1.6 · Receber alertas diários — C
-**Como** candidato, **quero** configurar alertas, **para** saber de vagas com match alto sem abrir o app.
+### US-1.6 · Configurar alertas — C
+**Como** candidato, **quero** configurar alertas de vagas novas, **para** saber de vagas com match alto sem abrir o app.
+- *Alertas diários* abre um drawer com ativar/desativar, frequência, match mínimo e canais (e-mail, navegador, Slack).
+- Desativar os alertas bloqueia os demais campos.
+- *Salvar alertas* fecha o drawer e confirma a configuração.
+
+*Componentes:* `AlertSettingsForm`, `Drawer`, `Switch`.
 
 ---
 
@@ -113,16 +120,25 @@ Persona padrão: **candidato(a)**, engenheiro(a) sênior buscando vagas remotas 
 **Como** candidato, **quero** cadastrar meus dados, resumo, experiências, formação, idiomas e skills em um só lugar, **para** que todos os documentos partam da mesma fonte.
 - Dados pessoais e resumo são campos controlados (`onPersonalInfoChange(campo, valor)`).
 - Experiências mostram cargo, empresa, local, período, bullets e tags, com *Editar* e *Adicionar experiência*.
+- *Adicionar* / *Editar* abrem um formulário (bullets uma por linha, tags separadas por vírgula); cargo e empresa são obrigatórios; *Remover* aparece na edição.
 - Skills aparecem agrupadas (linguagens, cloud, dados, IA).
 
-*Componentes:* `Pages/Currículo base`, `PersonalInfoForm`, `ExperienceCard`, `SkillsPanel`.
+*Componentes:* `Pages/Currículo base`, `PersonalInfoForm`, `ExperienceCard`, `ExperienceForm`, `SkillsPanel`.
 
 ### US-4.2 · Versionar o currículo base — S
 **Como** candidato, **quero** salvar novas versões e ver o histórico, **para** saber de qual versão cada documento foi gerado.
-- *Salvar como vN* emite `onSave`; *Histórico de versões* emite `onOpenHistory`.
+- *Salvar como vN* emite `onSave`, cria a versão e atualiza o rótulo na navegação.
+- *Histórico de versões* (`onOpenHistory`) lista versões com data, nota e quantidade de documentos gerados; versões antigas podem ser restauradas.
+
+*Componentes:* `VersionHistory`, `Drawer`.
 
 ### US-4.3 · Importar de PDF ou LinkedIn — C
 **Como** candidato, **quero** importar meu CV atual, **para** não digitar tudo do zero.
+- Escolho entre arquivo PDF e perfil do LinkedIn.
+- *Importar* só habilita com arquivo selecionado ou URL preenchida e mostra carregamento.
+- Ao terminar, vejo um resumo do que foi encontrado e um atalho para revisar antes de salvar — nada é salvo sem revisão.
+
+*Componentes:* `ImportResumeForm`, `OptionCard`.
 
 ### US-4.4 · Definir regras de geração — M
 **Como** candidato, **quero** ligar regras como "nunca incluir skill ausente" e "usar métricas só se preenchidas", **para** garantir documentos honestos.
@@ -133,7 +149,9 @@ Persona padrão: **candidato(a)**, engenheiro(a) sênior buscando vagas remotas 
 ### US-4.5 · Definir preferências de busca — S
 **Como** candidato, **quero** registrar cargos-alvo, regiões, modalidade, contratação e remuneração mínima, **para** que o match e as buscas reflitam o que procuro.
 
-*Componentes:* `KeyValueList`.
+- *Editar* abre um formulário com um campo por preferência; salvar atualiza a lista.
+
+*Componentes:* `KeyValueList`, `KeyValueForm`.
 
 ---
 
@@ -219,7 +237,7 @@ Persona padrão: **candidato(a)**, engenheiro(a) sênior buscando vagas remotas 
 **Como** candidato, **quero** ver minhas candidaturas por etapa, **para** saber onde cada processo está.
 - Colunas: Salvas, Aplicadas, Em conversa, Entrevistas, Oferta — cada uma com ponto de cor e total.
 - Cards mostram empresa, match, cargo, contexto, documentos enviados e próximo passo; **follow-ups atrasados** aparecem em âmbar.
-- Clicar no cargo emite `onOpenApplication(id)`; coluna vazia mostra "Nada aqui ainda".
+- Clicar no cargo emite `onOpenApplication(id)` e abre a candidatura para edição no mesmo drawer da candidatura manual; coluna vazia mostra "Nada aqui ainda".
 
 *Componentes:* `Pages/Candidaturas (kanban)`, `KanbanBoard`, `KanbanColumn`, `ApplicationCard`, `StatusDot`.
 
@@ -233,10 +251,15 @@ Persona padrão: **candidato(a)**, engenheiro(a) sênior buscando vagas remotas 
 *Componentes:* `Drawer`, `ApplicationForm`, `FormField`, `Radio`.
 
 ### US-7.3 · Mover candidaturas entre etapas — S
-**Como** candidato, **quero** mudar a etapa de uma candidatura, **para** manter o tracker atualizado. *(Arrastar e soltar fica para a fase 2.)*
+**Como** candidato, **quero** mudar a etapa de uma candidatura, **para** manter o tracker atualizado.
+- Cada card tem um seletor “Mover para” (`KanbanBoard movable`, evento `onMoveApplication(id, etapa)`).
+- Mover leva o card para a coluna escolhida e atualiza os totais. *(Arrastar e soltar fica para a fase 2.)*
 
 ### US-7.4 · Ser lembrado de follow-ups — S
 **Como** candidato, **quero** lembretes de próximos passos, **para** não perder o timing.
+- Follow-ups atrasados aparecem em âmbar nos cards e na tabela.
+- Ao abrir *Candidaturas*, um aviso (`Toast`) mostra o follow-up atrasado mais antigo.
+- *Marcar como feito* limpa o atraso daquele card.
 
 ---
 

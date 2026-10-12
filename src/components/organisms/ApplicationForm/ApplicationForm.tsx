@@ -39,12 +39,12 @@ export function ApplicationForm({ draft, stageOptions, sourceOptions, errors = {
   };
   return (
     <form className={styles.form} onSubmit={submit} noValidate aria-label="Nova candidatura manual">
-      <FormField label="Link da vaga" error={errors.url}>
-        <div className={styles.inline}>
+      <div className={styles.inline}>
+        <FormField label="Link da vaga" error={errors.url}>
           <Input type="url" value={draft.url} placeholder="https://…" onChange={set('url')} invalid={!!errors.url} />
-          <Button variant="outline" loading={importing} onClick={() => onImport?.(draft.url)} disabled={!draft.url}>Importar</Button>
-        </div>
-      </FormField>
+        </FormField>
+        <Button variant="outline" loading={importing} onClick={() => onImport?.(draft.url)} disabled={!draft.url}>Importar</Button>
+      </div>
       <div className={styles.grid}>
         <FormField label="Empresa" error={errors.company}><Input value={draft.company} placeholder="Ex.: Acme" onChange={set('company')} invalid={!!errors.company} /></FormField>
         <FormField label="Cargo" error={errors.role}><Input value={draft.role} placeholder="Ex.: Senior Backend" onChange={set('role')} invalid={!!errors.role} /></FormField>

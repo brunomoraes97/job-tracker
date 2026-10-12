@@ -22,10 +22,10 @@ const preview: Preview = {
         dark: { name: 'Sidebar', value: color.sidebarBg },
       },
     },
-    a11y: { test: 'todo' },
+    a11y: { test: 'error' },
     options: {
       storySort: {
-        order: ['Design System', ['Visão geral', 'Tokens (referência)'], 'Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages'],
+        order: ['Design System', ['Visão geral', 'Tokens (referência)'], 'Histórias de usuário', 'Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages'],
       },
     },
   },

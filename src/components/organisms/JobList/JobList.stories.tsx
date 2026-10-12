@@ -17,4 +17,5 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
+export const Grid: Story = { args: { layout: 'grid' } };
 export const Empty: Story = { args: { jobs: [], totalLabel: '0 resultados' } };

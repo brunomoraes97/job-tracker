@@ -7,7 +7,7 @@ const meta = {
   component: NavItem,
   args: { label: 'Novas vagas', href: '#jobs', badge: '23', active: true, onNavigate: fn() },
   globals: { backgrounds: { value: 'dark' } },
-  decorators: [(S) => <div style={{ width: 208 }}><S /></div>],
+  decorators: [(S) => <div style={{ width: 240, padding: 16, background: '#1C1B19' }}><S /></div>],
 } satisfies Meta<typeof NavItem>;
 export default meta;
 type Story = StoryObj<typeof meta>;

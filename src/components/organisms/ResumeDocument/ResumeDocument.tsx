@@ -21,11 +21,11 @@ export function ResumeDocument({ data, width = 480, showHighlights = true }: Res
         <div className={styles.contact}>{data.contact}</div>
       </header>
       <section className={styles.section}>
-        <h3 className={styles.h}>SUMMARY</h3>
+        <div className={styles.h}>SUMMARY</div>
         <p className={styles.p}>{renderRich(data.summary, mark)}</p>
       </section>
       <section className={styles.section}>
-        <h3 className={styles.h}>EXPERIENCE</h3>
+        <div className={styles.h}>EXPERIENCE</div>
         {data.entries.map((e) => (
           <div key={e.id} className={styles.entry}>
             <div className={styles.entryHead}><span>{e.heading}</span><span className={styles.period}>{e.period}</span></div>
@@ -34,15 +34,15 @@ export function ResumeDocument({ data, width = 480, showHighlights = true }: Res
         ))}
       </section>
       <section className={styles.section}>
-        <h3 className={styles.h}>SKILLS</h3>
+        <div className={styles.h}>SKILLS</div>
         <p className={styles.p}>{renderRich(data.skills, mark)}</p>
       </section>
       <section className={styles.section}>
-        <h3 className={styles.h}>EDUCATION</h3>
+        <div className={styles.h}>EDUCATION</div>
         <p className={styles.p}>{data.education}</p>
       </section>
       <section className={styles.section}>
-        <h3 className={styles.h}>LANGUAGES</h3>
+        <div className={styles.h}>LANGUAGES</div>
         <p className={styles.p}>{data.languages}</p>
       </section>
     </article>

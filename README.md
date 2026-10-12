@@ -19,8 +19,22 @@ npm install
 npm run storybook        # http://localhost:6006
 npm run build-storybook  # gera storybook-static/
 npm run typecheck        # tsc --noEmit
-npm test                 # vitest (lógica pura + integridade dos tokens)
+npm test                 # vitest: lógica pura, integridade dos tokens e catálogo de histórias
+npm run test-storybook   # cada story vira teste no Chromium: render, play e acessibilidade (axe)
 ```
+
+`test-storybook` usa o Playwright. Se o Chromium dele não estiver instalado (`npx playwright install chromium`), aponte `CHROMIUM_PATH` para um Chromium existente.
+
+## Histórias de usuário interativas
+
+No Storybook, a seção **Histórias de usuário** tem uma pasta por épico e uma visão por história (US-1.1 … US-9.3). Cada visão:
+
+- mostra a história ("Como…, quero…, para…") e seus critérios de aceite no topo;
+- roda o **protótipo navegável** (`src/user-stories/harness/PrototypeApp.tsx`), que guarda o estado e liga as páginas: filtrar, salvar no tracker, gerar e regenerar documentos, mover candidaturas, criar buscas, compilar dorks…;
+- executa uma **play function** que percorre os critérios de aceite passo a passo (painel *Interactions*). Depois disso, a tela fica livre para você interagir;
+- registra cada evento de intenção no painel *Actions* (`onEvent`).
+
+O protótipo existe só no Storybook e faz o papel da futura camada de aplicação. As páginas continuam sendo apenas apresentação.
 
 ## Estrutura
 
@@ -37,7 +51,11 @@ src/
     organisms/           # JobCard, KanbanBoard, ApplicationForm, DorkBuilderForm…
     templates/           # AppShell, PageLayout, SplitLayout, ThreePaneLayout
     pages/               # uma página por tela, compostas só por props
-  lib/                   # lógica pura (buildDork, stages, cx, richText)
+  lib/                   # lógica pura (buildDork, filterJobs, validateDraft, stages…)
+  user-stories/
+    catalog.ts           # espelho de docs/user-stories.md
+    harness/             # PrototypeApp (estado + navegação), StoryBrief, helpers de play
+    stories/             # um arquivo por épico (uma pasta no Storybook), uma story por história
   types/                 # tipos de domínio
   mocks/fixtures.ts      # dados de exemplo usados apenas nas stories
 ```

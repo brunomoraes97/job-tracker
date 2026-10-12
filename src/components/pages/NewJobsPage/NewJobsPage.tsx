@@ -25,6 +25,8 @@ export interface NewJobsPageProps {
   sortLabel: string;
   sourcesLabel?: string;
   resumeLabel: string;
+  /** Layout da lista (Lista = `list`, Cards = `grid`). */
+  listLayout?: 'list' | 'grid';
   onViewChange?: (view: string) => void;
   onQueryChange?: (query: string) => void;
   onToggleFilter?: (id: string, selected: boolean) => void;
@@ -61,12 +63,12 @@ export function NewJobsPage(p: NewJobsPageProps) {
           <Button variant="ghost" size="sm" iconLeft="plus" onClick={p.onAddFilter}>Filtro</Button>
         </div>
         <SplitLayout
-          main={<JobList jobs={p.jobs} selectedId={p.selectedJobId} totalLabel={p.totalLabel} sortLabel={p.sortLabel} sourcesLabel={p.sourcesLabel} onSelectJob={p.onSelectJob} />}
+          main={<JobList jobs={p.jobs} selectedId={p.selectedJobId} totalLabel={p.totalLabel} sortLabel={p.sortLabel} sourcesLabel={p.sourcesLabel} layout={p.listLayout} onSelectJob={p.onSelectJob} />}
           aside={
             selected ? (
               <JobDetailPanel job={selected} resumeLabel={p.resumeLabel} onGenerate={p.onGenerate} onSave={p.onSaveJob} onDiscard={p.onDiscardJob} onOpenDescription={p.onOpenDescription} />
             ) : (
-              <aside className={styles.placeholder}>Selecione uma vaga para ver por que ela combina com você.</aside>
+              <div className={styles.placeholder}>Selecione uma vaga para ver por que ela combina com você.</div>
             )
           }
         />

@@ -26,6 +26,11 @@ export interface ApplicationsBoardPageProps {
   onOpenApplication?: (id: string) => void;
   onNewApplication?: () => void;
   onCloseForm?: () => void;
+  /** Título do drawer (padrão: nova candidatura). */
+  formTitle?: string;
+  formSubtitle?: string;
+  movable?: boolean;
+  onMoveApplication?: (id: string, stage: StageId) => void;
 }
 
 export function ApplicationsBoardPage(p: ApplicationsBoardPageProps) {
@@ -33,7 +38,7 @@ export function ApplicationsBoardPage(p: ApplicationsBoardPageProps) {
     <AppShell
       sidebar={<Sidebar {...p.sidebar} />}
       overlay={
-        <Drawer open={p.formOpen} contained={p.containedOverlay} title="Nova candidatura" subtitle="Para vagas que você achou fora do Radar." onClose={p.onCloseForm}>
+        <Drawer open={p.formOpen} contained={p.containedOverlay} title={p.formTitle ?? 'Nova candidatura'} subtitle={p.formSubtitle ?? 'Para vagas que você achou fora do Radar.'} onClose={p.onCloseForm}>
           <ApplicationForm {...p.form} onCancel={p.form.onCancel ?? p.onCloseForm} />
         </Drawer>
       }
@@ -52,7 +57,7 @@ export function ApplicationsBoardPage(p: ApplicationsBoardPageProps) {
           />
         }
       >
-        <KanbanBoard stages={p.stages} applications={p.applications} counts={p.counts} onOpenApplication={p.onOpenApplication} />
+        <KanbanBoard stages={p.stages} applications={p.applications} counts={p.counts} onOpenApplication={p.onOpenApplication} movable={p.movable} onMoveApplication={p.onMoveApplication} />
       </PageLayout>
     </AppShell>
   );

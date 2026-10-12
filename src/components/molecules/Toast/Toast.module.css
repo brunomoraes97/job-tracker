@@ -1,0 +1,10 @@
+.toast { display: flex; align-items: center; gap: var(--jt-space-3); min-width: 320px; max-width: 480px; padding: var(--jt-space-2-5) var(--jt-space-2-5) var(--jt-space-2-5) var(--jt-space-3-5); border-radius: var(--jt-radius-xl); background: var(--jt-color-code-bg); color: var(--jt-color-code-text); box-shadow: var(--jt-shadow-md); }
+.floating { position: fixed; right: var(--jt-space-6); bottom: var(--jt-space-6); z-index: var(--jt-z-index-toast); }
+.icon { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; display: grid; place-items: center; }
+.success .icon { background: var(--jt-color-primary); color: var(--jt-color-on-primary); }
+.info .icon { background: var(--jt-color-info-soft); color: var(--jt-color-info-strong); }
+.warning .icon { background: var(--jt-color-warning-soft); color: var(--jt-color-warning-strong); }
+.message { flex: 1; font-size: var(--jt-text-small-size); line-height: 1.4; }
+.action { padding: 6px 10px; border: 0; border-radius: var(--jt-radius-md); background: transparent; color: var(--jt-color-sidebar-accent); font-size: var(--jt-text-small-size); font-weight: 600; cursor: pointer; white-space: nowrap; }
+.action:hover { background: var(--jt-color-code-raised); }
+.toast :global(button[aria-label='Fechar aviso']) { color: var(--jt-color-sidebar-text-subtle); }
